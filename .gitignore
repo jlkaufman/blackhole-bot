@@ -1,0 +1,6 @@
+vendor/
+.idea
+config/blackhole.yml
+.vagrant/
+.jaxl
+blackhole-bot

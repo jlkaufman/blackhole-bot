@@ -1,0 +1,12 @@
+[Unit]
+Description=BlackholeBot
+After=network.target
+
+[Service]
+Type=forking
+PIDFile=/var/run/BlackholeBot/bot.pid
+ExecStart=/usr/local/sbin/blackhole-bot -d
+
+
+[Install]
+WantedBy=multi-user.target

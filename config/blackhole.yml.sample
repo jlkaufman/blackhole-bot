@@ -1,0 +1,32 @@
+blackhole:
+  dns_server: 11.22.35.2
+  log_level: warning
+  daemon:
+    user:
+      uid: 1000
+      gid: 1000
+  irc:
+    nickname: X
+    username: blackholeBridge
+    realname: blackholeBridge
+    server:
+      host: irc.example.com
+      port: 6697
+      ssl: true
+    channel: "#somechannel"
+
+  xmpp:
+    account:
+      jid: "jid@jabber.example.com"
+      password: "password_goes_here"
+    conference: "someroom@conference.jabber.exmple.com"
+    nickname: X
+    server:
+      host: jabber.example.com
+      port: 5222
+      auth_type: DIGEST-MD5
+      ssl:
+        force_tls: true
+        verify_peer: true
+        allow_self_signed: false
+        verify_peer_name: true

@@ -1,0 +1,35 @@
+{
+    "name": "jlkaufman/blackhole-bot",
+    "description": "Blackhole: A Jabber/IRC Gateway Bot",
+    "authors": [
+        {
+            "name": "Justin Kaufman",
+            "email": "jkgithub@icloud.com"
+        }
+    ],
+    "require": {
+        "abhinavsingh/jaxl": "3.0.*",
+        "phergie/phergie-irc-client-react": "~2",
+        "symfony/console": "3.0.*",
+        "symfony/config": "3.0.*",
+        "symfony/yaml": "3.0.*",
+        "symfony/dependency-injection": "3.0.*",
+        "psr/log": "1.0.*",
+        "php": ">=5.6.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "BlackholeBot\\": "src/"
+        }
+    },
+    "bin": [
+        "bin/bot"
+    ],
+    "license": "BSD-3-Clause",
+    "keywords": [
+        "jabber",
+        "irc",
+        "bot",
+        "relay"
+    ]
+}

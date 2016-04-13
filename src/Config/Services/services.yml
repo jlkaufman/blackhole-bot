@@ -1,0 +1,28 @@
+parameters: ~
+  # ...
+
+services:
+  # Config
+  configuration:
+    class: BlackholeBot\Config\Configuration
+    arguments: ['@service_container']
+
+  # Logger
+  logger:
+    class: BlackholeBot\Logger\Logger
+    arguments: ['@service_container']
+
+  # Process Manager
+  processManager:
+    class: BlackholeBot\ProcessManager\Manager
+    arguments: ['@service_container']
+
+  # Socket Manager - Contains everything we need for sockets
+  socketManager:
+    class: BlackholeBot\ProcessManager\Sockets\SocketManager
+
+
+  # Daemon
+  daemon:
+    class: BlackholeBot\Process\Daemon
+    arguments: ['@service_container']

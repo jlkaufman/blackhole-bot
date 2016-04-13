@@ -1,0 +1,33 @@
+#!/usr/bin/env php
+<?php
+/**
+ * A Jabber/IRC Gateway Bot
+ *
+ * @author Ender
+ */
+require __DIR__ . '/../vendor/autoload.php';
+
+const BASE_DIR =  __DIR__ . '/../';
+
+use BlackholeBot\BotApp;
+use Symfony\Component\Config\FileLocator;
+use Symfony\Component\DependencyInjection\ContainerBuilder;
+use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
+
+/**
+ * Setup the Application
+ */
+$application = new BotApp();
+
+/**
+ * Setup the service container
+ */
+$container   = new ContainerBuilder();
+$loader      = new YamlFileLoader($container, new FileLocator([BASE_DIR . '/src/Config/Services']));
+
+$loader->load('services.yml');
+
+$botCommand  = new \BlackholeBot\Commands\BotCommand($container);
+
+$application->add($botCommand);
+$application->run();
